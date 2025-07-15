@@ -1,0 +1,13 @@
+.container { max-width: 1100px; margin: 0 auto; padding: 1rem; font-family: system-ui, Arial, sans-serif; }
+.grid { display: grid; gap: 6px; }
+.grid-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); gap: 6px; }
+.seat { border: 1px solid #ddd; min-height: 60px; border-radius: 10px; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+.seat.blocked { background: #333 !important; color: #fff; }
+.seat-label { font-weight: 600; }
+.seat-sub { font-size: 12px; opacity: 0.7; }
+.panel { display:flex; gap:10px; flex-wrap:wrap; margin-bottom: 12px; align-items: center; }
+.panel label { display:flex; gap:6px; align-items:center; }
+.panel input, .panel select { padding:4px 8px; }
+.panel button { padding:6px 12px; border-radius:8px; border:1px solid #ddd; cursor:pointer; }
+.analysis { display:flex; gap:12px; margin: 12px 0; }
+.card { padding:10px 14px; border:1px solid #ddd; border-radius:10px; background:#fafafa; }
