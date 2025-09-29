@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AnalysisCards({ metrics }) {
+const AnalysisCards = ({ metrics }) => {
   if (!metrics) return null;
   return (
     <div className="analysis">
@@ -10,3 +10,5 @@ export default function AnalysisCards({ metrics }) {
     </div>
   );
 }
+
+export default AnalysisCards;

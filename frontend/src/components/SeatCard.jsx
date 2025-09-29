@@ -6,7 +6,7 @@ const subjectColor = (sub) => ({
   Chemistry: "#fff1e6"
 }[sub] || "#f2f2f2");
 
-export default function SeatCard({ row, col, blocked, seat, onSwapStart, onSwapDrop }) {
+const SeatCard = ({ row, col, blocked, seat, onSwapStart, onSwapDrop }) => {
   const draggable = !!seat?.studentId && !blocked;
 
   return (
@@ -26,3 +26,5 @@ export default function SeatCard({ row, col, blocked, seat, onSwapStart, onSwapD
     </div>
   );
 }
+
+export default SeatCard;

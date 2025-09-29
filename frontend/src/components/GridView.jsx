@@ -2,7 +2,7 @@ import React from "react";
 import SeatCard from "./SeatCard";
 import "./../styles.css";
 
-export default function GridView({ rows, cols, seats, blocked, onSwapStart, onSwapDrop }) {
+const GridView = ({ rows, cols, seats, blocked, onSwapStart, onSwapDrop }) =>{
   const blockedKey = new Set(blocked.map(b => `${b.row},${b.col}`));
   const seatMap = new Map(seats.map(s => [`${s.row},${s.col}`, s]));
 
@@ -27,3 +27,5 @@ export default function GridView({ rows, cols, seats, blocked, onSwapStart, onSw
   }
   return <div className="grid">{grid}</div>;
 }
+
+export default GridView;

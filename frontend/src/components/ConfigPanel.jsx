@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function ConfigPanel({ onGenerate }) {
+const ConfigPanel = ({ onGenerate }) => {
   const [strategy, setStrategy] = useState("linear");
   const [rows, setRows] = useState("6");
   const [cols, setCols] = useState("8");
@@ -67,3 +67,5 @@ export default function ConfigPanel({ onGenerate }) {
     </div>
   );
 }
+
+export default ConfigPanel;

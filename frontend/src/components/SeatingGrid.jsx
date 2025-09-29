@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function SeatingGrid({ arrangementId }) {
+const SeatingGrid = ({ arrangementId }) => {
   const [seats, setSeats] = useState([]);
   const [meta, setMeta] = useState({});
 
@@ -50,3 +50,5 @@ function getSubjectColor(subject) {
   };
   return colors[subject] || '#ddd';
 }
+
+export default SeatingGrid;

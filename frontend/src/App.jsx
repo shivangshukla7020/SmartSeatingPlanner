@@ -3,14 +3,15 @@ import GridView from "./components/GridView";
 import ConfigPanel from "./components/ConfigPanel";
 import AnalysisCards from "./components/AnalysisCards";
 import CSVUpload from "./components/CSVupload";
+import GroupSelector from "./components/GroupSelector";
 import { createArrangement, getStudents, postSwap, getAnalysis } from "./lib/api";
 
 import { socket } from "./lib/socket";
 
 export default function App() {
-  const [arr, setArr] = useState(null);
+  const [arr, setArr] = useState(null); // Receives arrangement from backend
   const [metrics, setMetrics] = useState(null);
-  const [students, setStudents] = useState([]); // ✅ store students here
+  const [students, setStudents] = useState([]);
   const [dragFrom, setDragFrom] = useState(null);
   const [uploadedStudents, setUploadedStudents] = useState([]);
   const [selectedGroupId, setSelectedGroupId] = useState(null); // group id from CSV
@@ -53,7 +54,7 @@ export default function App() {
     };
   }, [arr?._id]);
 
-  // ✅ Properly enrich seats with student data
+  
   const enrichSeats = useMemo(() => {
     if (!arr) return [];
     const allStudents = uploadedStudents.length ? uploadedStudents : students; // students from CSV or DB
@@ -108,6 +109,10 @@ export default function App() {
       <CSVUpload
         onStudentsLoaded={setUploadedStudents}
         setSelectedGroupId={setSelectedGroupId}
+      />
+
+      <GroupSelector 
+        setSelectedGroupId={setSelectedGroupId} 
       />
 
       <ConfigPanel onGenerate={onGenerate}/>
