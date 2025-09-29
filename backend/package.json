@@ -4,9 +4,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/server.js",
-    "seed": "node src/seed.js",
-    "test": "jest"
+    "start": "nodemon index.js",
+    "seed": "node database/seed.js"
   },
   "keywords": [],
   "author": "",
