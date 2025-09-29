@@ -13,7 +13,7 @@ const CSVUpload = ({ onStudentsLoaded, setSelectedGroupId }) =>{
     }
 
     // Parse CSV file first
-    Papa.parse(file, {
+    Papa.parse(file, {  
       header: true,
       skipEmptyLines: true,
       complete: async (results) => {
@@ -28,13 +28,13 @@ const CSVUpload = ({ onStudentsLoaded, setSelectedGroupId }) =>{
         // send file + groupName to backend
         const formData = new FormData();
         formData.append("file", file);
-        formData.append("name", groupName);
+        formData.append("title", groupName);
 
         try {
           const res = await uploadCSV(formData);
           // backend returns saved group (_id + name)
-          setSelectedGroupId(res.data.group._id);
-          alert(`CSV uploaded successfully for group: ${res.data.group.name}`);
+          setSelectedGroupId(res.data._id);
+          alert(`CSV uploaded successfully for group: ${res.data.title}`);
         } catch (err) {
           console.error("Error uploading CSV:", err);
           alert("Upload failed. Check console.");
